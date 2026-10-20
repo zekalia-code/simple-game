@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>NEON RELIC — Fixed</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div id="wrap">
+  <div id="hud">
+    <div class="brand">NEON <span>RELIC</span>
+    </div>
+    <div class="stats">
+      <div class="stat">ENERGY<b id="energy">0</b>
+      </div>
+      <div class="stat">TIME<b id="time">90</b>
+      </div>
+    </div>
+  </div>
+  
+  <div id="hint">COLLECT 6 CRYSTALS · AVOID DRONES · REACH THE PORTAL</div>
+
+  <div id="start" class="card">
+    <div class="eyebrow">A LOST WORLD AWAITS</div>
+    <h1>NEON<br><span>RELIC</span></h1>
+    <p>Collect energy crystals, avoid sentry drones, and reach the portal before time runs out.</p>
+    <button id="startBtn" type="button">START EXPEDITION</button>
+    <div class="small">WASD / ARROWS TO MOVE · SPACE TO JUMP</div>
+  </div>
+
+  <div id="result" class="card hidden">
+    <div class="eyebrow" id="resultEyebrow">EXPEDITION COMPLETE</div>
+    <h2 id="resultTitle">ISLAND CLEARED</h2>
+    <p id="resultText"></p>
+    <button id="again" type="button">PLAY AGAIN</button>
+  </div>
+
+  <div id="touch">
+    <div class="dpad">
+      <button type="button" data-key="ArrowUp">▲</button>
+      <div class="drow">
+        <button type="button" data-key="ArrowLeft">◀</button>
+        <button type="button" data-key="ArrowDown">▼</button>
+        <button type="button" data-key="ArrowRight">▶</button>
+      </div>
+    </div>
+    <button id="jump" type="button">JUMP</button>
+  </div>
+    
+  <div id="footer">
+    <span>SECTOR 01 / THE SHATTERED RING</span>
+    <span>3D BROWSER GAME</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="game.js"></script></body></html>
