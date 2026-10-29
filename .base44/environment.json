@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "THREE_JS_CDN",
+      "description": "No external credentials are required. The game loads Three.js from the public jsDelivr CDN at runtime, so the browser needs internet access.",
+      "requiredAtBoot": false
+    }
+  ]
+}
