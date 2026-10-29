@@ -1,0 +1,24 @@
+services:
+  web:
+    image: node:22-alpine
+    restart: on-failure
+    working_dir: /site
+    command: ["node", "dev/serve.mjs", "/site", "3000"]
+    ports:
+      - "3000:3000"
+    volumes:
+      # The repo is served straight from the working tree — no build, no image copy.
+      - ./:/site:ro
+    healthcheck:
+      # The landing page must actually be served with real app markup.
+      test:
+        - CMD-SHELL
+        - node -e "fetch('http://127.0.0.1:3000/').then(r=>r.text()).then(t=>process.exit(t.includes('RELIC')?0:1)).catch(()=>process.exit(1))"
+      interval: 10s
+      timeout: 4s
+      retries: 5
+      start_period: 5s
+    labels:
+      base44.project: "RELIC AR"
+      base44.kind: web
+      base44.port: "3000"
